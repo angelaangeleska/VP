@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Songs Homepage - Welcome to My Music Store</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to My Music Store</h1>
+</header>
+<main>
+    <h2>Choose an artist:</h2>
+    <form th:method="GET" action="/artistDetails">
+<!--        <input type="hidden" name="trackId" th:value="${}" />-->
+        <div th:each="artist : ${artistList}">
+            <input type="radio" name="artistRadio" th:id="${artist.getId()}" th:value="${artist.getId()}">
+            <label th:for="${artist.getId()}" th:text="${artist.getFirstName()} + ' ' + ${artist.getLastName()}"></label>
+            <br>
+        </div>
+        <br>
+        <input type='submit' value='Submit'>
+    </form>
+</main>
+</body>
+</html>

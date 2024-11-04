@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Song Details</title>
+
+</head>
+<body>
+<h1>Artist Details</h1>
+<h1 th:text="${entity.getFullName()}"></h1>
+<ol>
+  <li th:each="songs : ${songList}"
+      th:text="${songs.getTitle()}"></li>
+</ol>
+
+</body>
+</html>
